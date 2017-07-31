@@ -18,21 +18,19 @@ Simple Angular Datepicker
 
 # index.html
 <pre>
-    
-    <script src="dateExtensions.js"></script>
-    <script src="datepicker.js"></script>
-    <datepicker date="date" classname="className" placeholder="dd/mm/yyyy" clearbutton ="false" datebutton="true"></datepicker>
-
+<script src="dateExtensions.js"></script>
+<script src="datepicker.js"></script>
+<datepicker date="date" classname="className" placeholder="dd/mm/yyyy" clearbutton ="false" datebutton="true"></datepicker>
 </pre>
 
 # app.js 
 <pre>
-    angular.module('application',["app.colorpicker"]);
+angular.module('application',["app.colorpicker"]);
 </pre>
 
 # controller.js 
 <pre>
-   $scope.date = date;
+$scope.date = date;
 </pre>
 
 
