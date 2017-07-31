@@ -18,9 +18,11 @@ Simple Angular Datepicker
 
 # index.html
 <pre>
+    
     <script src="dateExtensions.js"></script>
     <script src="datepicker.js"></script>
     <datepicker date="date" classname="className" placeholder="dd/mm/yyyy" clearbutton ="false" datebutton="true"></datepicker>
+
 </pre>
 
 # app.js 
