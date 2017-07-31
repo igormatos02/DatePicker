@@ -1,29 +1,27 @@
-Date.dateIsValid=function(y, m, d) {
-
+Date.dateIsValid = function(y, m, d) {
     var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    // If evenly divisible by 4 and not evenly divisible by 100,
-    // or is evenly divisible by 400, then a leap year
     if ((!(y % 4) && y % 100) || !(y % 400)) {
         daysInMonth[1] = 29;
     }
     return d <= daysInMonth[--m]
 }
-Date.getPreviousYears=function (manyYearsBefore) {
+
+Date.getPreviousYears = function (manyYearsBefore) {
     var lastYears = [];
     var today = new Date();
     var yyyy = today.getFullYear();
-    //lastYears[lastYears.length] = yyyy;
     for ($i = 0; $i < manyYearsBefore; $i++) {
         lastYears[lastYears.length] = yyyy - $i;
     }
-
     return lastYears;
 }
-Date.getCurrentYear=function () {
+
+Date.getCurrentYear = function () {
     var today = new Date();
     var mm = today.getFullYear();
     return mm;
 }
+
 Date.getCurrentMonth = function () {
     var today = new Date();
     var mm = today.getMonth() + 1; 
@@ -32,6 +30,7 @@ Date.getCurrentMonth = function () {
     }
     return mm;
 }
+
 Date.getCurrentDay = function () {
     var today = new Date();
     var dd = today.getDate();
@@ -117,24 +116,17 @@ Date.getDaysOfMonth = function (year, month) {
         index++;
         if (index == 7) index = 0;
     }
-
     return daysArray;
 }
 
-
-Date.isLeapYear=function(y) {
+Date.isLeapYear = function(y) {
     return ((y % 4 == 0) && ((!(y % 100 == 0)) ||
       (y % 400 == 0)));
 }
-// fim código da função anoBissexto
 
-// código da função diasMes
 Date.getDaysInMonth = function(mes, ano) {
     var dias_meses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
     var quant_dias = dias_meses[mes - 1];
-
-    // verifica se o ano é bissexto
     if ((Date.isLeapYear(ano)) && (mes == 2))
         quant_dias = 29;
 
@@ -171,26 +163,26 @@ Date.convertDateFormat=function (ddmmyyyy) {
     var dateParts = ddmmyyyy.split('/');
     return dateParts[2] + "-" + dateParts[1] + "-" + dateParts[0];
 }
-Date.newDate=function (ddmmyyyy) {
+
+Date.newDate = function (ddmmyyyy) {
     var dateParts = ddmmyyyy.split('/');
     return new Date(parseInt(dateParts[2],10),  parseInt(dateParts[1],10)-1,   parseInt(dateParts[0],10));
 }
-Date.getFirsDayOfWeek=function(year,month){
-    
+
+Date.getFirsDayOfWeek = function(year,month){
     var firstDay = new Date(year, month, 1);
-    //var lastDay = new Date(y, m + 1, 0);
     return firstDay.getDay()
 }
-Date.getFirsDayOfMonth=function(year,month){
-    
+
+Date.getFirsDayOfMonth = function(year,month){
    var date = new Date(), y = date.getFullYear(), m = date.getMonth();
    var firstDay = new Date(year, month-1, 1);
-    //var lastDay = new Date(y, m + 1, 0);
-    return firstDay.getDay()
+   return firstDay.getDay()
 }
-Date.getPreviousMonthLastDay=function(year,month){
-    d = new Date(year, month-1, 1);
-    d.setDate(1); // going to 1st of the month
-    d.setHours(-1); // going to last hour before this date even started.
-    return d.getDate();
+
+Date.getPreviousMonthLastDay = function(year,month){
+    date = new Date(year, month-1, 1);
+    date.setDate(1);
+    date.setHours(-1); 
+    return date.getDate();
 }
