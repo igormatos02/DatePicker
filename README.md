@@ -16,10 +16,14 @@ Simple Angular Datepicker
 | datebutton   | Show the date  Button                    |  true/false    |  
 
 
-# HTML
+# index.html
+<pre>
+<code>
 <script src="dateExtensions.js"></script>
 <script src="datepicker.js"></script>
 <datepicker date="date" classname="className" placeholder="dd/mm/yyyy" clearbutton ="false" datebutton="true"></datepicker>
+</code>
+</pre>
 
 # app.js 
 <pre>
